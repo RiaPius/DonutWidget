@@ -3,7 +3,14 @@
 DonutWidget is a simple jquery donut widget 
 
 
-### Markdown
+### Installation
+1. Download the files
+2. Load jquery.DonutWidget.min.css and jquery.DonutWidget.min.js
+
+### Prerequisites
+Since DonutWidget is a jquery plugin, jquery should be loaded before the plugin.
+
+
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
