@@ -41,16 +41,19 @@ You can update one or more properties and redraw the widget
 
 ### Using jQuery
 To update a property:
-```
+
 `
 $(selector).data("$donut").options.value = 20;
 `
-```
+
 To redraw the widget
+
 `
 $(selector).DonutWidget();
 `
+
 or you can pass the updated properties directly as
+
 `
 $(selector).DonutWidget(options);
 `
