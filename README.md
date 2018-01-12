@@ -34,8 +34,6 @@ var widget = DonutWidget.draw($(selector), options);
 ```
 **The element should have class ```donut-widget```**
 
-
-
 ## Redrawing widgets
 You can update one or more properties and redraw the widget
 
