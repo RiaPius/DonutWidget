@@ -16,12 +16,6 @@ DonutWidget.defaults = {
     , text: ""
     , rotate: 0
     , caption: ""
-    , template: [
-            '<div class="donut-hole"><span class="donut-filling"></div>'
-            , '<div class="donut-bite" data-segment-index="0"></div>'
-            , '<div class="donut-bite" data-segment-index="1"></div>'
-            , '<div class="donut-caption-wrapper"><span class="donut-caption"></span></div>'
-        ].join('')
     , colors: {
         primary: "#ffe600"
         , background: "#eee"
@@ -46,7 +40,13 @@ DonutWidget.prototype = {
         return this;
     }
     , paint: function () {
-        this.$element.html(this.options.template);
+        var template = [
+            '<div class="donut-hole"><span class="donut-filling"></div>'
+            , '<div class="donut-bite" data-segment-index="0"></div>'
+            , '<div class="donut-bite" data-segment-index="1"></div>'
+            , '<div class="donut-caption-wrapper"><span class="donut-caption"></span></div>'
+        ].join('');
+        this.$element.html(template);
         if (!this.$element.hasClass("donut-widget")) {
             this.$element.addClass("donut-widget");
         }
