@@ -20,6 +20,35 @@ DonutWidget can be initialized in 2 ways
 $(selector).DonutWidget(options);
 ```
 
+### Implemneting using function
+
+```
+var widget = DonutWidget.draw($(selector), options);
+```
+
+## Redrawing widgets
+You can update one or more properties and redraw the widget
+
+### Using jQuery
+To update a property:
+```
+$(selector).data("$donut").options.value = 20;
+```
+To redraw the widget
+```
+$(selector).DonutWidget();
+```
+or you can pass the updated properties directly as
+```
+$(selector).DonutWidget(options);
+```
+
+### Using variable
+You can pass the updated property in ```redraw``` function
+```
+widget.redraw(options); 
+```
+
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 

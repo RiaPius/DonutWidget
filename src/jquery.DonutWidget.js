@@ -43,6 +43,7 @@ DonutWidget.prototype = {
             this.instanceID = DonutWidget.instances;
         }
         this.paint();
+        return this;
     }
     , paint: function () {
         this.$element.html(this.options.template);
@@ -87,6 +88,7 @@ DonutWidget.prototype = {
         if (this.$element.attr("id")) {
             selector = "#" + this.$element.attr("id");
         }
+        this.selector = selector;
         this.removeStyle(index);
         var style = $("#dynamic").text() + "/*Style for " + this.instanceID + "_" + index + "*/" + selector + " .donut-bite[data-segment-index=\"" + index + "\"]{-moz-transform:rotate(" + start + "deg);-ms-transform:rotate(" + start + "deg);-webkit-transform:rotate(" + start + "deg);-o-transform:rotate(" + start + "deg);transform:rotate(" + start + "deg);}" + selector + " .donut-bite[data-segment-index=\"" + index + "\"]:BEFORE{-moz-transform:rotate(" + deg + "deg);-ms-transform:rotate(" + deg + "deg);-webkit-transform:rotate(" + deg + "deg);-o-transform:rotate(" + deg + "deg);transform:rotate(" + deg + "deg); background-color: " + segment[2] + ";}" + selector + " .donut-bite[data-segment-index=\"" + index + "\"]:BEFORE{ background-color: " + segment[2] + ";}" + selector + " .donut-bite[data-segment-index=\"" + index + "\"].large:AFTER{ background-color: " + segment[2] + ";}";
         style += "/*Style End for " + this.instanceID + "_" + index + "*/";
@@ -103,7 +105,7 @@ DonutWidget.prototype = {
     }
     , setText: function () {
         if (!this.options.text) {
-            this.options.text = ((this.options.value / this.options.max) * 100) + "%";
+            this.options.text = Math.round(((this.options.value / this.options.max) * 100)) + "%";
         }
         this.$element.find(".donut-filling").text(this.options.text);
         this.$element.find(".donut-caption").text(this.options.caption);
@@ -117,12 +119,16 @@ DonutWidget.prototype = {
         this.$element.attr("data-chart-primary", this.options.colors.primary);
         this.$element.attr("data-chart-background", this.options.colors.background);
         this.$element.attr("data-chart-size", this.options.size);
+    },
+    redraw: function(options){
+       return this.init(this.$element, $.extend({},this.options, options));
     }
 }
 DonutWidget.draw = function (element, options) {
     if (!element) {
         element = $(".donut-widget")
     }
+    var results = [];
     for (var i = 0; i < element.length; i++) {
         var doptions = {};
         if ($(element[i]).data("chart-max")) {
@@ -151,11 +157,15 @@ DonutWidget.draw = function (element, options) {
         if ($(element[i]).data("chart-size")) {
             doptions.size = $(element[i]).data("chart-size");
         }
-        new DonutWidget($(element[i]), $.extend(doptions, options));
+        results.push(new DonutWidget($(element[i]), $.extend(doptions, options)));
     }
+    if(results.length == 1){
+        results = results[0];
+    }
+    return results;
 };
 DonutWidget.redraw = function (element, options) {
-    DonutWidget.draw(element, options);
+    return DonutWidget.draw(element, options);
 };
 /* 
  * jQuery plugin Implementation 
@@ -164,8 +174,16 @@ $.fn.DonutWidget = function (option) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data("$donut");
-        var options = typeof option === 'object' && option;
+        var options = null;
+        if(data){
+            options = $.extend({}, data.options, option);
+        }
+        else{
+            options = typeof option === 'object' && option;
+        }
+        $this.donut = data;
         $this.data("$donut", (data = new DonutWidget($(this), options)));
+        
     })
 };
 $.fn.DonutWidget.Constructor = DonutWidget;
