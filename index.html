@@ -1,93 +1,187 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Fabric-ui-lync-presence : Bring Lync Presence and status text in HTML pages">
-
+    <meta name="description" content="DonutWidget jQuery Plugin: jquery donut widget">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <title>DonutWidget jQuery Plugin</title>
+</head>
 
-    <title>Fabric-ui-lync-presence</title>
-  </head>
-
-  <body>
-
+<body>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/paulgeorge92/Fabric-UI-Lync-Presence">View on GitHub</a>
-
-          <h1 id="project_title">Fabric-ui-lync-presence</h1>
-          <h2 id="project_tagline">Bring Lync Presence and status text in HTML pages</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/paulgeorge92/Fabric-UI-Lync-Presence/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/paulgeorge92/Fabric-UI-Lync-Presence/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+        <header class="inner"> <a id="forkme_banner" href="https://github.com/paulgeorge92/DonutWidget">View on GitHub</a>
+            <h1 id="project_title">DonutWidget jQuery Plugin</h1>
+            <h2 id="project_tagline">jquery donut widget</h2>
+            <section id="downloads"> <a class="zip_download_link" href="https://github.com/paulgeorge92/DonutWidget/zipball/master">Download this project as a .zip file</a> <a class="tar_download_link" href="https://github.com/paulgeorge92/DonutWidget/tarball/master">Download this project as a tar.gz file</a> </section>
         </header>
     </div>
-
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="fabric-ui-lync-presence" class="anchor" href="#fabric-ui-lync-presence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fabric-UI-Lync-Presence</h1>
-
-<p>Bring Lync Presence and status text in HTML pages</p>
-
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
-
-<ol>
-<li>Download the files.</li>
-<li>Load the fabric.min.css and fabric.components.min.css</li>
-<li>Load the lync.css</li>
-<li>Load lync.min.js</li>
-</ol>
-
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-
-<p>Use the following HTML markup to bring the Lync Presence. </p>
-
-<p>&lt;div class="lync-status" data-sip="sip_address" data-name="Name_of_the_User" data-title="title" data-image="image_url""&gt;&lt;/div&gt;</p>
-
-<p>&lt;div class="facepile" data-sip="sip_address" data-name="Name_of_the_User" data-image="image_url""&gt;&lt;/div&gt;</p>
-
-<p>Initiate the lync presence in script <code>lync.init();</code>  </p>
-
-<p>You don't need to call the init() twice for lync status and face pile! The function will take care of that.  </p>
-
-<p>You can pass certain properties for   </p>
-
-<p><code>visible: number_of_faces_to_be_displayed_in_facepile,</code></p>
-
-<p><code>moreFace: function_call_back_on_click_of_more</code></p>
-
-<h2>
-<a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h2>
-
-<img src="http://paulgeorge.esy.es/Fabric_UI_Lync_Presence/lync.PNG"/>
-
-<p><a href="http://bit.ly/lync_presence" target="_blank">Click here for a demo</a></p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
-
-<p>MIT LICENSE</p>
-      </section>
+        <section id="main_content" class="inner">
+            <h1>
+                <a id="DonutWidget" class="anchor" href="#DonutWidget" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                DonutWidget jQuery Plugin
+            </h1>
+            <p>DonutWidget is a simple jquery donut widget</p>
+            <h2>
+                <a id="installation" class="anchor" href="#installation" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Installation
+            </h2>
+            <ol>
+                <li>Download the files</li>
+                <li>Load jquery.DonutWidget.min.css and jquery.DonutWidget.min.js</li>
+            </ol>
+            <h2>
+                <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>Prerequisites
+            </h2>
+            <p>Since DonutWidget is a jquery plugin, jquery should be loaded before the plugin.</p>
+            <h2>
+                <a id="initalization" class="anchor" href="#initalization" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Initalization
+            </h2>
+            <p>DonutWidget can be initialized in 2 ways</p>
+            <h3>
+                <a id="jQuery-Implementation" class="anchor" href="#jQuery-Implementation" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                jQuery Implementation  
+            </h3> <code>$(selector).DonutWidget(options);</code>
+            <h3>
+                <a id="function-Implementation" class="anchor" href="#function-Implementation" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Implemneting using function  
+            </h3> <code>var widget = DonutWidget.draw($(selector), options);</code>
+            <h3>
+                <a id="html-Implementation" class="anchor" href="#html-Implementation" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                HTML implementation  
+            </h3> <code>&lt;div class=&quot;donut-widget&quot; data-chart-max=&quot;&lt;value&gt;&quot; data-chart-value=&quot;&lt;value&gt;&quot; data-chart-text=&quot;&lt;value&gt;&quot; data-chart-rotate=&quot;&lt;value&gt;&quot; data-chart-caption=&quot;&lt;value&gt;&quot; data-chart-primary=&quot;&lt;value&gt;&quot; data-chart-background=&quot;&lt;value&gt;&quot; data-chart-size=&quot;&lt;value&gt;&quot;>&lt;/div&gt;
+            </code> <strong>The element should have class donut-widget</strong>
+            <h2>
+                <a id="redrawing-widgets" class="anchor" href="#redrawing-widgets" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Redrawing widgets  
+            </h2>
+            <p>You can update one or more properties and redraw the widget</p>
+            <h3>
+                <a id="Using-jQuery" class="anchor" href="#Using-jQuery" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Using jQuery  
+            </h3>
+            <p> To update a property: </p> <code>$(selector).data("$donut").options.value = 20;</code>
+            <p>To redraw the widget</p> <code>$(selector).DonutWidget();</code>
+            <p>or you can pass the updated properties directly as</p> <code>$(selector).DonutWidget(options);</code>
+            <h3>
+                <a id="Using-variable" class="anchor" href="#Using-variable" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Using variable  
+            </h3>
+            <p>You can pass the updated property in <code>redraw</code> function </p> <code>widget.redraw(options);</code>
+            <h2>
+                <a id="Option-parameters" class="anchor" href="#Option-parameters" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Option parameters 
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th align="center">type</th>
+                        <th align="right">Default Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>max</td>
+                        <td align="center">integer</td>
+                        <td align="right">100</td>
+                        <td>Maximum value of widget</td>
+                    </tr>
+                    <tr>
+                        <td>value</td>
+                        <td align="center">integer</td>
+                        <td align="right">0</td>
+                        <td>value of widget</td>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td align="center">string</td>
+                        <td align="right">%</td>
+                        <td>Text to be displayed inside widget. Default will be % of max</td>
+                    </tr>
+                    <tr>
+                        <td>rotate</td>
+                        <td align="center">integer</td>
+                        <td align="right">0</td>
+                        <td>From where the widget mark should start</td>
+                    </tr>
+                    <tr>
+                        <td>caption</td>
+                        <td align="center">string</td>
+                        <td align="right">empty string</td>
+                        <td>Text to be shown below the widget</td>
+                    </tr>
+                    <tr>
+                        <td>colors</td>
+                        <td align="center">json</td>
+                        <td align="right"></td>
+                        <td>The color property must have both primary and background color codes.</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td align="center">string</td>
+                        <td align="right">normal</td>
+                        <td>Size of widget. Possible values: tiny, small, normal, large, jumbo, huge</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>
+                <a id="Contributing" class="anchor" href="#Contributing" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Contributing 
+            </h2>
+            <ol>
+                <li>Fork it!</li>
+                <li>Create your feature branch: <code>git checkout -b my-new-feature</code></li>
+                <li>Commit your changes: <code>git commit -am 'Add some feature'</code></li>
+                <li>Push to the branch: <code>git push origin my-new-feature</code></li>
+                <li>Submit a pull request :D</li>
+            </ol>
+            <h2>
+                <a id="license" class="anchor" href="#license" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                License
+            </h2>
+            <p>MIT LICENSE</p>
+        </section>
     </div>
-
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Fabric-ui-lync-presence maintained by <a href="https://github.com/paulgeorge92">paulgeorge92</a> | About <a href="https://about.me/paulgeorge">Paul George</a></p>
-        <!-- <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
-      </footer>
+        <footer class="inner">
+            <p class="copyright">DonutWidget maintained by <a href="https://github.com/paulgeorge92">paulgeorge92</a> | About <a href="https://about.me/paulgeorge">Paul George</a></p>
+            <!-- <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
+        </footer>
     </div>
+</body>
 
-    
-
-  </body>
 </html>
