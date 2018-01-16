@@ -97,10 +97,6 @@
     height: 60px;
     left: 30.5px;
 }
-.tiny.donut-widget .donut-bite.large {
-    width: 60px;
-    height: 60px;
-}
 .tiny.donut-widget .donut-bite:BEFORE {
     width: 30px;
     height: 60px;
@@ -144,10 +140,6 @@
     height: 85px;
     left: 43px;
 }
-.small.donut-widget .donut-bite.large {
-    width: 85px;
-    height: 85px;
-}
 .small.donut-widget .donut-bite:BEFORE {
     width: 42.5px;
     height: 85px;
@@ -189,10 +181,6 @@
     width: 55px;
     height: 110px;
     left: 55.5px;
-}
-.normal.donut-widget .donut-bite.large {
-    width: 110px;
-    height: 110px;
 }
 .normal.donut-widget .donut-bite:BEFORE {
     width: 55px;
@@ -236,10 +224,6 @@
     height: 135px;
     left: 68px;
 }
-.large.donut-widget .donut-bite.large {
-    width: 135px;
-    height: 135px;
-}
 .large.donut-widget .donut-bite:BEFORE {
     width: 67.5px;
     height: 135px;
@@ -282,10 +266,6 @@
     height: 160px;
     left: 80.5px;
 }
-.jumbo.donut-widget .donut-bite.large {
-    width: 160px;
-    height: 160px;
-}
 .jumbo.donut-widget .donut-bite:BEFORE {
     width: 80px;
     height: 160px;
@@ -327,10 +307,6 @@
     width: 175px;
     height: 350px;
     left: 175.5px;
-}
-.giant.donut-widget .donut-bite.large {
-    width: 350px;
-    height: 350px;
 }
 .giant.donut-widget .donut-bite:BEFORE {
     width: 175px;
